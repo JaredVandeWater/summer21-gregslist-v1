@@ -7,21 +7,25 @@ export class CarsController {
         this.drawCars()
     }
     drawCars(){
+        ProxyState.activePage='cars'
         let template = ''
         ProxyState.cars.forEach(car =>{
             template += /*html */`
-            <div class="col-lg-4 listing my-3">
-                <div class="card">
-                    <div> 
+            <div class="col-lg-4 listing mt-4">
+                <div class="card my-card shadow">
+                    <div class="mx-auto mt-3"> 
                         <img src="${car.img}" height="200" /> 
                     </div>
                     <div class="card-body">
-                        <p>
+                        <h3 class="text-center">
                             <b>${car.make} ${car.model}</b>
-                        </p>
-                        <p>
-                            <em>${car.price}</em>
-                        </p>
+                        </h3>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-primary text-light">Buy</a>
+                            <h4 class=>
+                                <em>$${car.price}</em>
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -32,7 +36,6 @@ export class CarsController {
 
     addCar(event){
         event.preventDefault()
-        console.log(event)
         let form = event.target
         let formData = {
             make: form.make.value,
@@ -42,14 +45,19 @@ export class CarsController {
             img: form.img.value,
             miles: form.miles.value,
         }
-        console.log(formData)
         carsService.addCar(formData)
         form.reset()
-        this.toggleForm()
+        this.removeForm()
     }
 
     toggleForm(){
+        if (ProxyState.activePage==='cars'){
         document.getElementById('car-form').classList.toggle('d-none')
+        }
     }
+    removeForm(){
+        document.getElementById('car-form').classList.add('d-none')
+    }
+
 
 }

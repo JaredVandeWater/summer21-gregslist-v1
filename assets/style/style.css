@@ -12,3 +12,13 @@
     place-content: center;
     padding: 1rem;
 }
+
+.my-card{
+    max-width: 30rem;
+    min-width: 20rem;
+    margin: auto;
+}
+
+.my-color{
+    min-width: 3rem;
+}

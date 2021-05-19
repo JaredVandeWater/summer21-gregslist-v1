@@ -25,51 +25,74 @@
         <div class="container-fluid my-3">
             <div class="row">
                 <div class="col-2">
-                    <button class="btn btn-primary btn-block" onclick="app.carsController.drawCars()">Cars</button>
+                    <button class="btn btn-primary btn-block"
+                        onclick="app.carsController.drawCars();app.carsController.removeForm()">Cars</button>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary btn-block">Houses</button>
+                    <button class="btn btn-primary btn-block"
+                        onclick="app.housesController.drawHouses();app.carsController.removeForm()">Houses</button>
                 </div>
-                <!-- <div class="col-2"><button class="btn btn-info">Missed Connections Soooon</button></div>
-                <div class="col-2"><button class="btn btn-info"></button></div>
-                <div class="col-2"><button class="btn btn-info"></button></div>
-                <div class="col-2"><button class="btn btn-info"></button></div> -->
             </div>
             <div class="row" id="listings">
 
             </div>
 
-            <div class="row mb-5">
+            <div class="row my-5">
                 <div class="col-12">
-                    <button class="fab" onclick="app.carsController.toggleForm()">+</button>
+                    <button class="fab"
+                        onclick="app.carsController.toggleForm();app.housesController.toggleForm()">+</button>
                 </div>
                 <div class="col-lg-8 m-auto">
+
+                    <form class="card p-3 shadow d-none" id="house-form" onsubmit="app.carsController.addCar(event)">
+
+                    </form>
+
+
+
+
+
+
+
+
+
                     <form class="card p-3 shadow d-none" id="car-form" onsubmit="app.carsController.addCar(event)">
-                        <div class="form-group">
-                            <label for="make" class="sr-only">Make:</label>
-                            <input class="form-control" placeholder="Make" type="text" id="make" required />
+
+                        <div class="form-group d-flex justify-content-around mb-0">
+                            <div class="form-group">
+                                <label for="make" class="sr-only">Make:</label>
+                                <input class="form-control" placeholder="Make..." type="text" id="make" required />
+                            </div>
+                            <div>
+                                <label for="Model" class="sr-only">Model:</label>
+                                <input class="form-control" type="text" placeholder="Model..." id="model" required />
+                            </div>
+                            <div>
+                                <label for="miles" class="sr-only">Miles:</label>
+                                <input class="form-control" placeholder="Miles..." type="number" id="miles" />
+                            </div>
+                            <div class="my-color">
+                                <label for="color" class="sr-only">Color:</label>
+                                <input class="form-control" type="color" id="color" />
+                            </div>
+
                         </div>
                         <div class="form-group">
-                            <label for="Model" class="sr-only">Model:</label>
-                            <input class="form-control" type="text" placeholder="Model" id="model" required />
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="price" class="sr-only">Price:</label>
+                                <input class="form-control" placeholder="Price..." type="number" min="0" id="price"
+                                    required />
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="price" class="sr-only">Price:</label>
-                            <input class="form-control" placeholder="price" type="number" min="0" id="price" required />
+                            <label for="img" class="sr-only">Image URL:</label>
+                            <input class="form-control" placeholder="Image URL..." type="text" id="img" />
                         </div>
-                        <div class="form-group">
-                            <label for="color" class="sr-only">Color:</label>
-                            <input class="form-control" placeholder="color" type="color" id="color" />
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit">Create Car</button>
                         </div>
-                        <div class="form-group">
-                            <label for="miles" class="sr-only">miles:</label>
-                            <input class="form-control" placeholder="miles" type="number" id="miles" />
-                        </div>
-                        <div class="form-group">
-                            <label for="img" class="sr-only">img:</label>
-                            <input class="form-control" placeholder="img" type="text" id="img" />
-                        </div>
-                        <button type="submit">submit form</button>
                     </form>
                     <!-- <form onsubmit="app.housesController.addHouse(event)">
                         TODO that you not me
