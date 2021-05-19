@@ -22,3 +22,7 @@
 .my-color{
     min-width: 3rem;
 }
+
+.my-text-area{
+    resize: none;
+}

@@ -35,6 +35,11 @@ export class HousesController{
         document.getElementById('listings').innerHTML = template
     }
 
+    addHouse(event){
+        event.preventDefault();
+        
+    }
+
     toggleForm(){
         if(ProxyState.activePage ==='houses'){
             document.getElementById('house-form').classList.toggle('d-none')
