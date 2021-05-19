@@ -26,3 +26,9 @@
 .my-text-area{
     resize: none;
 }
+
+.my-btn{
+    min-width: fit-content;
+    max-width: 20rem;
+    
+}

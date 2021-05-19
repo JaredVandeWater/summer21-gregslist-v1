@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { housesService } from "../Services/HousesService.js";
 
 export class HousesController{
     constructor(){
@@ -37,6 +38,19 @@ export class HousesController{
 
     addHouse(event){
         event.preventDefault();
+        let form = event.target
+        let formData={
+            bedrooms: form.bedrooms.value,
+            bathrooms: form.bathrooms.value,
+            levels: form.levels.value,
+            description: form.description.value,
+            img: form.img.value,
+            price: form.price.value
+        }
+         housesService.addHouse(formData)
+         form.reset()
+         this.removeForm()
+        
         
     }
 
