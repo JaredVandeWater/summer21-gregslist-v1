@@ -6,6 +6,7 @@ export class House{
         this.bathrooms= bathrooms
         this.description = description
         this.img = img
+        this.id = Date.now()
     }
 
 }

@@ -6,6 +6,7 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
 
   activePage='cars'
+  cash=100
 
   /** @type {Car[]} */
   cars = [

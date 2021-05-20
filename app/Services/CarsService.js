@@ -6,6 +6,7 @@ class CarsService{
         let newCar = new Car(formData.make, formData.model, formData.miles, formData.color, parseFloat(formData.price).toFixed(2), formData.img)
         // ProxyState.cars.unshift(newCar)
         // TODO research the spread ... operator
+        console.log(newCar.id);
         ProxyState.cars = [newCar, ...ProxyState.cars]
     }
 }

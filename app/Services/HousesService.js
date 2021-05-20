@@ -7,6 +7,13 @@ class HousesService{
         ProxyState.houses.unshift(newHouse)
         ProxyState.houses=ProxyState.houses
     }
+    buyHouse(id){
+        let selectedHouse = ProxyState.houses.find(house => house.id === id )
+        console.log(parseFloat(selectedHouse.price));
+        if (ProxyState.cash>=parseFloat(selectedHouse.price)){
+        ProxyState.houses=ProxyState.houses.filter(house => house.id != id )
+        }else Swal.fire('Not Enough Money')
+    }
 }
 
 

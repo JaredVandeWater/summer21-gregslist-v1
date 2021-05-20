@@ -22,7 +22,7 @@ export class HousesController{
                         </h3>
                         <p>${house.description}</p>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-primary text-light">Buy</a>
+                            <a onclick="app.housesController.buyHouse(${house.id})" class="btn btn-primary text-light">Buy</a>
                             <h4 class=>
                                 <em>$${house.price}</em>
                             </h4>
@@ -62,6 +62,10 @@ export class HousesController{
 
     removeForm(){
         document.getElementById('house-form').classList.add('d-none')
+    }
+
+    buyHouse(id){
+        housesService.buyHouse(id)
     }
 
 }
