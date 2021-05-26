@@ -1,11 +1,12 @@
 export class Car {
-    constructor(make, model, miles, color, price, img = '//placehold.it/500x500'){
-        this.make = make
-        this.model = model
-        this.miles = miles
-        this.color = color
-        this.price = price
-        this.img = img
-        this.id = Date.now()
+    constructor(data){
+        this.make = data.make
+        this.model = data.model
+        this.year = data.year
+        this.price = data.price
+        this.imgUrl = data.imgUrl
+        this.id = data.id
+        this.description = data.description
+        
     }
 }

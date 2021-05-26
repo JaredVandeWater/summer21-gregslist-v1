@@ -4,8 +4,11 @@ import { carsService } from "../Services/CarsService.js";
 export class CarsController {
     constructor(){
         ProxyState.on('cars', this.drawCars)
-        this.drawCars()
+        carsService.getAllCars()
     }
+
+
+
     drawCars(){
         ProxyState.activePage='cars'
         let template = ''
