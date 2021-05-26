@@ -1,12 +1,12 @@
 export class House{
-    constructor(price, bedrooms, bathrooms, description,levels, img='//placehold.it/500x500'){
-        this.price=price
-        this.levels=levels
-        this.bedrooms=bedrooms
-        this.bathrooms= bathrooms
-        this.description = description
-        this.img = img
-        this.id = Date.now()
+    constructor(data){
+        this.price = data.price
+        this.levels = data.levels
+        this.bedrooms = data.bedrooms
+        this.bathrooms = data.bathrooms
+        this.description = data.description
+        this.imgUrl = data.imgUrl
+        this.id = data.id
     }
 
 }

@@ -6,8 +6,8 @@ class App {
   //   this.carsController = new CarsController()
   // }
 
-  carsController = new CarsController()
   housesController = new HousesController()
+  carsController = new CarsController()
 
 }
 

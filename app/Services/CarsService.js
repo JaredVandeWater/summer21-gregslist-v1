@@ -8,10 +8,8 @@ class CarsService{
     async getAllCars(){
         let res = await axios.get(url)
         ProxyState.cars = res.data.map(c => new Car(c))
-        console.log(ProxyState.cars);
     }
     
-
 
 
     addCar(formData){

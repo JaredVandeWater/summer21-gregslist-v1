@@ -7,17 +7,15 @@ export class CarsController {
         carsService.getAllCars()
     }
 
-
-
     drawCars(){
         ProxyState.activePage='cars'
         let template = ''
         ProxyState.cars.forEach(car =>{
             template += /*html */`
-            <div class="col-lg-4 listing mt-4">
+            <div class="col-lg-4 col-md-6 listing mt-4">
                 <div class="card my-card shadow">
                     <div class="mx-auto mt-3"> 
-                        <img src="${car.img}" height="200" /> 
+                        <img src="${car.imgUrl}" height="200" /> 
                     </div>
                     <div class="card-body">
                         <h3 class="text-center">
