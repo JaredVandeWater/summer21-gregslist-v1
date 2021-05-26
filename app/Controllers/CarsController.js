@@ -1,11 +1,32 @@
 import { ProxyState } from "../AppState.js";
 import { carsService } from "../Services/CarsService.js";
+import { housesService } from "../Services/HousesService.js";
 
 export class CarsController {
     constructor(){
         ProxyState.on('cars', this.drawCars)
         carsService.getAllCars()
     }
+
+
+    async getAllHouses(){
+        try {
+            housesService.getAllHouses()
+            
+        } catch (error) {
+            
+        }
+    }
+
+    async deleteCar(id){
+        try {
+           await carsService.deleteCar(id)
+            
+        } catch (error) {
+            
+        }
+    }
+
 
     drawCars(){
         ProxyState.activePage='cars'
@@ -22,7 +43,7 @@ export class CarsController {
                             <b>${car.make} ${car.model}</b>
                         </h3>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-primary text-light">Buy</a>
+                            <button onclick="app.carsController.deleteCar('${car.id}')" class="btn btn-danger text-light">Delete</button>
                             <h4 class=>
                                 <em>$${car.price}</em>
                             </h4>

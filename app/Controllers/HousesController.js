@@ -5,9 +5,23 @@ import { housesService } from "../Services/HousesService.js";
 
 export class HousesController{
     constructor(){
-        
         ProxyState.on('houses', this.drawHouses)
-        housesService.getAllHouses()
+    }
+
+
+    async deleteHouse(id){
+      try {
+            await housesService.deleteHouse(id)
+        } catch (error) {
+            console.error(error.message)
+        }
+    }
+    async getAllHouses(){
+        try {
+            await housesService.getAllHouses()
+        } catch (error) {
+            console.error(error.message)
+        }
     }
 
     drawHouses(){
@@ -26,7 +40,7 @@ export class HousesController{
                         </h3>
                         <p>${house.description}</p>
                         <div class="d-flex justify-content-between">
-                            <a onclick="app.housesController.buyHouse(${house.id})" class="btn btn-primary text-light">Buy</a>
+                            <button onclick="app.housesController.deleteHouse('${house.id}')" class="btn btn-danger text-light">Delete</button>
                             <h4 class=>
                                 <em>$${house.price}</em>
                             </h4>

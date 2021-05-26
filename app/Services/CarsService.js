@@ -10,7 +10,10 @@ class CarsService{
         ProxyState.cars = res.data.map(c => new Car(c))
     }
     
-
+    async deleteCar(id){
+        await axios.delete(url + id)
+        ProxyState.cars = ProxyState.cars.filter(c => c.id != id)
+    }
 
     addCar(formData){
         let newCar = new Car(formData.make, formData.model, formData.miles, formData.color, parseFloat(formData.price).toFixed(2), formData.img)
