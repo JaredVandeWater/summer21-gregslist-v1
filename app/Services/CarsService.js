@@ -5,7 +5,7 @@ let url = "https://bcw-sandbox.herokuapp.com/api/cars/"
 
 class CarsService{
 
-    async getAllCars(url){
+    async getAllCars(){
         let res = await axios.get(url)
         ProxyState.cars = res.data.map(c => new Car(c))
         console.log(ProxyState.cars);
