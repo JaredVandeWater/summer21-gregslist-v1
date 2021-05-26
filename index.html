@@ -64,6 +64,10 @@
                                 <label for="levels" class="sr-only">Levels</label>
                                 <input type="number" class="form-control" placeholder="Levels..." id="levels">
                             </div>
+                            <div>
+                                <label for="year" class="sr-only">Year</label>
+                                <input type="number" class="form-control" placeholder="Year..." id="year">
+                            </div>
                         </div>
                         <div class=form-group>
 
@@ -73,8 +77,8 @@
                         </div>
                         <div class="d-flex justify-content-around form-group">
                             <div>
-                                <label class="sr-only" for="img"></label>
-                                <input type="text" class="form-control" placeholder="Image..." id="img">
+                                <label class="sr-only" for="imgUrl"></label>
+                                <input type="text" class="form-control" placeholder="Image..." id="imgUrl">
                             </div>
 
                             <div>
@@ -100,6 +104,10 @@
 
                         <div class="form-group d-flex justify-content-around">
                             <div>
+                                <label for="carId" class="d-none">Make:</label>
+                                <input class="form-control" type="text" id="carId" required />
+                            </div>
+                            <div>
                                 <label for="make" class="sr-only">Make:</label>
                                 <input class="form-control" placeholder="Make..." type="text" id="make" required />
                             </div>
@@ -108,12 +116,8 @@
                                 <input class="form-control" type="text" placeholder="Model..." id="model" required />
                             </div>
                             <div>
-                                <label for="miles" class="sr-only">Miles:</label>
-                                <input class="form-control" placeholder="Miles..." type="number" id="miles" />
-                            </div>
-                            <div class="my-color">
-                                <label for="color" class="sr-only">Color:</label>
-                                <input class="form-control" type="color" id="color" />
+                                <label for="year" class="sr-only">Year:</label>
+                                <input class="form-control" placeholder="Year..." type="text" id="year" />
                             </div>
 
                         </div>
@@ -124,9 +128,15 @@
                                     required />
                             </div>
                         </div>
+                        <div class=form-group>
+
+                            <textarea placeholder="Enter a description of your car..." class="my-text-area form-control"
+                                type="text" for="description" name="description" id="description" cols="25"
+                                rows="5"></textarea>
+                        </div>
                         <div class="form-group">
-                            <label for="img" class="sr-only">Image URL:</label>
-                            <input class="form-control" placeholder="Image URL..." type="text" id="img" />
+                            <label for="imgUrl" class="sr-only">Image URL:</label>
+                            <input class="form-control" placeholder="Image URL..." type="text" id="imgUrl" />
                         </div>
                         <div class="d-flex justify-content-end">
                             <button class="btn btn-primary" type="submit">Create Car</button>

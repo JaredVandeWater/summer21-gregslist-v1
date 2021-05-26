@@ -26,10 +26,10 @@ class HousesService{
         }
     }
     
-    addHouse(formData){
-        let newHouse = new House(parseFloat(formData.price).toFixed(2),formData.bedrooms,formData.bathrooms,formData.description,formData.levels,formData.img)
-        ProxyState.houses.unshift(newHouse)
-        ProxyState.houses=ProxyState.houses
+    async addHouse(formData){
+        let res = await axios.post(url, formData)
+        let newHouse = new House(res.data)
+        ProxyState.houses = [...ProxyState.houses, newHouse]
     }
 }
 

@@ -15,12 +15,10 @@ class CarsService{
         ProxyState.cars = ProxyState.cars.filter(c => c.id != id)
     }
 
-    addCar(formData){
-        let newCar = new Car(formData.make, formData.model, formData.miles, formData.color, parseFloat(formData.price).toFixed(2), formData.img)
-        // ProxyState.cars.unshift(newCar)
-        // TODO research the spread ... operator
-        console.log(newCar.id);
-        ProxyState.cars = [newCar, ...ProxyState.cars]
+    async addCar(formData){
+        let res = await axios.post(url, formData)
+        let newCar = new Car(res.data)
+        ProxyState.cars = [...ProxyState.cars, newCar]
     }
 }
 

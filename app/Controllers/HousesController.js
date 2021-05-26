@@ -41,6 +41,7 @@ export class HousesController{
                         <p>${house.description}</p>
                         <div class="d-flex justify-content-between">
                             <button onclick="app.housesController.deleteHouse('${house.id}')" class="btn btn-danger text-light">Delete</button>
+                            <button onclick="app.housesController.editHouse('${house.id}')" class="btn btn-info text-light">Edit</button>
                             <h4 class=>
                                 <em>$${house.price}</em>
                             </h4>
@@ -58,11 +59,12 @@ export class HousesController{
         event.preventDefault();
         let form = event.target
         let formData={
+            year: form.year.value,
             bedrooms: form.bedrooms.value,
             bathrooms: form.bathrooms.value,
             levels: form.levels.value,
             description: form.description.value,
-            img: form.img.value,
+            imgUrl: form.imgUrl.value,
             price: form.price.value
         }
          housesService.addHouse(formData)
